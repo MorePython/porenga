@@ -32,7 +32,7 @@ PROJECT_TEMPLATES = [
 ]
 
 # add apps/ to the Python path
-sys.path.append(normpath(join(PROJECT_ROOT, 'apps')))
+# sys.path.append(normpath(join(PROJECT_ROOT, 'apps')))
 
 
 # ##### APPLICATION CONFIGURATION #########################
@@ -45,6 +45,8 @@ DEFAULT_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    'apps.cli'
 ]
 
 # Middlewares
