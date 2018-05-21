@@ -30,4 +30,6 @@ DATABASES = {
 
 # ##### APPLICATION CONFIGURATION #########################
 
-INSTALLED_APPS = DEFAULT_APPS
+INSTALLED_APPS = DEFAULT_APPS + [
+    'apps.cli',
+]
