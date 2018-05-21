@@ -1,5 +1,14 @@
+# .coveragerc to control coverage.py
+
 [run]
-include = porenga/*
-omit = *migrations*, *tests*
-plugins =
-    django_coverage_plugin
+branch = True
+omit =
+    */__init__.py
+    */site-packages/*
+
+[report]
+precision = 1
+show_missing = True
+
+[html]
+directory = coverage_html

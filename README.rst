@@ -1,113 +1,49 @@
-Porenga
-=======
+django-project-skeleton
+=======================
 
-Behold My Awesome Project!
-
-.. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
-     :target: https://github.com/pydanny/cookiecutter-django/
-     :alt: Built with Cookiecutter Django
+**django-project-skeleton** is my skeleton for Django projects. It provides a
+directory structure for Django projects during development and deployment.
 
 
-:License: GPLv3
+Meta
+----
 
+Author:
+    Mischback
 
-Settings
---------
+Contributors:
+    `agirardeaudale <https://github.com/agirardeuadale>`_,
+    `jmrbcu <https://github.com/jmrbcu>`_
 
-Moved to settings_.
+Status:
+    maintained, in development
 
-.. _settings: http://cookiecutter-django.readthedocs.io/en/latest/settings.html
+Version:
+    1.3
 
-Basic Commands
---------------
+Django Version:
+    1.9, 1.10, 1.11, 2.0
 
-Setting Up Your Users
-^^^^^^^^^^^^^^^^^^^^^
-
-* To create a **normal user account**, just go to Sign Up and fill out the form. Once you submit it, you'll see a "Verify Your E-mail Address" page. Go to your console to see a simulated email verification message. Copy the link into your browser. Now the user's email should be verified and ready to go.
-
-* To create an **superuser account**, use this command::
-
-    $ python manage.py createsuperuser
-
-For convenience, you can keep your normal user logged in on Chrome and your superuser logged in on Firefox (or similar), so that you can see how the site behaves for both kinds of users.
-
-Test coverage
-^^^^^^^^^^^^^
-
-To run the tests, check your test coverage, and generate an HTML coverage report::
-
-    $ coverage run manage.py test
-    $ coverage html
-    $ open htmlcov/index.html
-
-Running tests with py.test
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-::
-
-  $ py.test
-
-Live reloading and Sass CSS compilation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Moved to `Live reloading and SASS compilation`_.
-
-.. _`Live reloading and SASS compilation`: http://cookiecutter-django.readthedocs.io/en/latest/live-reloading-and-sass-compilation.html
+Python Version:
+    2.7, 3.5 (tested); 3.4, 3.6 (assumed)
 
 
 
-Celery
-^^^^^^
+Usage
+-----
 
-This app comes with Celery.
+To use this repository just use the ``template`` option of `django-admin
+<https://docs.djangoproject.com/en/1.11/ref/django-admin/#startproject>`_::
 
-To run a celery worker:
+    $ django-admin startproject --template=https://github.com/Mischback/django-project-skeleton/archive/development.zip [projectname]
 
-.. code-block:: bash
+If you wish to automagically fill the ``apache2_vhost.sample`` the command is::
 
-    cd porenga
-    celery -A porenga.taskapp worker -l info
-
-Please note: For Celery's import magic to work, it is important *where* the celery commands are run. If you are in the same folder with *manage.py*, you should be right.
+    $ django-admin startproject --template=https://github.com/Mischback/django-project-skeleton/archive/development.zip --name apache2_vhost.sample [projectname]
 
 
+Documentation
+-------------
 
-
-Email Server
-^^^^^^^^^^^^
-
-In development, it is often nice to be able to see emails that are being sent from your application. If you choose to use `MailHog`_ when generating the project a local SMTP server with a web interface will be available.
-
-To start the service, make sure you have nodejs installed, and then type the following::
-
-    $ npm install
-    $ grunt serve
-
-(After the first run you only need to type ``grunt serve``) This will start an email server that listens on ``127.0.0.1:1025`` in addition to starting your Django project and a watch task for live reload.
-
-To view messages that are sent by your application, open your browser and go to ``http://127.0.0.1:8025``
-
-The email server will exit when you exit the Grunt task on the CLI with Ctrl+C.
-
-.. _mailhog: https://github.com/mailhog/MailHog
-
-
-
-Sentry
-^^^^^^
-
-Sentry is an error logging aggregator service. You can sign up for a free account at  https://sentry.io/signup/?code=cookiecutter  or download and host it yourself.
-The system is setup with reasonable defaults, including 404 logging and integration with the WSGI application.
-
-You must set the DSN url in production.
-
-
-Deployment
-----------
-
-The following details how to deploy this application.
-
-
-
-
+You can see the documentation over at **Read the Docs**: `django-project-skeleton
+<http://django-project-skeleton.readthedocs.org/en/latest/>`_
