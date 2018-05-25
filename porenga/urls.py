@@ -7,14 +7,13 @@ The `urlpatterns` list routes URLs to views. For more information please see:
 from django.urls import include, path
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
+from . import api
 
 urlpatterns = [
     # Examples:
     # url(r'^blog/', include('blog.urls', namespace='blog')),
 
-    # provide the most basic login/logout functionality
-    path('login/', auth_views.login,
-        {'template_name': 'core/login.html'}, name='core_login'),
+    path('api/v1/', api.urls),
     path('logout/', auth_views.logout, name='core_logout'),
 
     # enable the admin interface
