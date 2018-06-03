@@ -18,4 +18,5 @@ coverage_html
 
 .project
 .idea
+*.code-workspace
 
